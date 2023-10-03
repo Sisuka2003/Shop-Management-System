@@ -1,0 +1,45 @@
+License Agreement
+
+The licenses are the primary reason for the creation of this project. Licenses in this category require mandatory source distribution (including Google source code) if Google ships a product that includes third-party code protected by such a license. Also, any use of source code under licenses of this type in a Google product will “taint” Google source code with the restricted license. Third-party software made available under one of these licenses must not be part of Google products that are delivered to outside customers. Such prohibited distribution methods include ‘client’ (downloadable Google client software) and ‘embedded’ (such as software used inside the Google Search Appliance).
+
+BCL
+CERN Open Hardware License 2 - Strongly Reciprocal Variant
+Creative Commons “Attribution-ShareAlike” (CC BY-SA)
+GNU Classpath’s GPL + exception
+GNU GPL v1, v2, v3
+GNU LGPL v2, v2.1, v3 (though marked as restricted, LGPL-licensed components can be used without observing all of the restricted-type requirements if the component is dynamically-linked).
+Nethack General Public License
+Netscape Public License NPL 1.0 and NPL 1.1
+QPL
+Sleepycat License
+PresubmitR Open Hardware License
+qmail Terms of Distribution
+
+The ‘restricted_if_statically_linked’ license
+WARNING: Do not use this type of license without contacting emailremoved@!
+
+The ‘restricted_if_statically_linked’ license is a special case of license checking for go/grte. GRTE (Google Run Time Environment) has a special exception if it is shipped with the operating system and not linked statically into the binary.
+
+
+The ‘reciprocal’ licenses
+The ‘reciprocal’ licenses apply the same permissions and limitations set by the Restricted category of licenses, but with one important exception. The obligation to make source code available to recipients of software that depends on a Reciprocally-licensed library only extends to the contents of the library itself, together with any additions to or modifications of that individual library. Unlike GPL and other Restricted licenses, the other components of the software depending on the Reciprocal library do not need to have their source released under the corresponding reciprocal license.
+
+CERN Open Hardware License 1.2
+CERN Open Hardware License 2 - Weakly Reciprocal Variant
+Common Development and Distribution License CDDL 1.0, CDDL 1.1
+CeCILL-C License
+CPL 1.0
+EPL 1.0 and EPL 2.0 (Eclipse Public License)
+IPL 1.0 (IBM Public License)
+Mozilla Public License MPL 1.0, MPL 1.1, and MPL 2.0
+Apple Public Source License (APSL) 1.1
+Apple Public Source License (APSL) 2.0
+Ruby
+Microsoft Reciprocal License (MS-RL)
+Changes to reciprocally-licensed third-party source code in //piper/…/third_party will be made available by mirroring the altered third-party source code in a repository at third-party-removed.googlesource.com. Shortcut for setting up new projects.
+
+If reciprocally-licensed dependencies are surfaced in go/licensereview bugs for application launches, the team responsible for the app launch must create the new project repository at third-party-removed.googlesource.com if it does not already exist. Engineering employees are able to create new projects. The project should sync from //third_party using go/copybara, and include our modifications to the third party source code. If more than one version of a given dependency needs to be mirrored, the naming of the external mirrors should be the same as the naming of the //third_party versions, e.g., v1 and v2. //third_party/libraryX/v1 should be mirrored to third-party-removed.googlesource.com/libraryX/v1, and //third_party/libraryX/v2/folder should be mirrored to third-party-removed.googlesource.com/libraryX/v2/folder. Exceptions should be made where the internal name should not be shared externally, such as when there are confidential internal codenames involved, or we would not want to mirror embargoed security fixes.
+
+The open source office also encourages Google engineers to provide beneficial changes back to the upstream open source project under the go/patching policy. However, if there are compelling reasons not to mirror the internal modifications externally or share them upstream, such as when there are embargoed security fixes or valuable proprietary IP additions that should remain internal, then the reciprocally-licensed package must not be used in software that is distributed outside of Google. For example: client applications, the Google Search Appliance, Android applications. Use package visibility specifications to allow only binary targets that may depend on the package in question and an ALL-CAPS notice at the top of the BUILD file to indicate that the package contains patches which cannot be open sourced.
+
+The ‘METADATA’ file in the internal //piper/…/third_party directory should be updated to include a link to the external third-party-removed.googlesource.com mirror.

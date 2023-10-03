@@ -1,0 +1,3 @@
+Minimum RAM - 4GB
+OS          - Windows 7 (minimum)
+Screen Reso - 1280 x 800 (minimum)
